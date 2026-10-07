@@ -1,163 +1,74 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="tr">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Umre Rehberi — Gizlilik Politikası</title>
-<meta name="description" content="Umre Rehberi iOS uygulamasının gizlilik politikası.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:wght@500;600;700&family=Mulish:wght@400;500;600;700&display=swap">
+<title>Umre Rehberi – Gizlilik Politikası</title>
 <style>
-  :root{
-    --bg:#f4f2ec; --surface:#ffffff; --ink:#1d2622; --muted:#5c6b64;
-    --line:#e2ddd2; --teal:#0f7a6b; --teal-soft:#e5f0ed; --gold:#b8863b;
-    --callout:#eef4f1; --callout-line:#cfe3dc; --focus:#0f7a6b;
+  :root { color-scheme: light dark; }
+  body { margin: 0; font: 16px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #fafafa; color: #1f2937; }
+  main { max-width: 760px; margin: 0 auto; padding: 32px 20px 64px; }
+  h1 { font-size: 28px; margin: 0 0 4px; }
+  h2 { font-size: 20px; margin: 32px 0 8px; }
+  p, li { margin: 6px 0; }
+  table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 15px; }
+  th, td { border: 1px solid #d1d5db; padding: 8px 10px; text-align: left; vertical-align: top; }
+  th { background: #f3f4f6; }
+  .muted { color: #6b7280; }
+  @media (prefers-color-scheme: dark) {
+    body { background: #111215; color: #e5e7eb; }
+    th { background: #1f2027; }
+    th, td { border-color: #2f313a; }
+    .muted { color: #9ca3af; }
   }
-  @media (prefers-color-scheme:dark){
-    :root:not([data-theme="light"]){
-      --bg:#0e1512; --surface:#141d19; --ink:#e7ece9; --muted:#9fb0a8;
-      --line:#243029; --teal:#3fd0b8; --teal-soft:#14261f; --gold:#d3ab63;
-      --callout:#13201b; --callout-line:#20362d; --focus:#3fd0b8;
-    }
-  }
-  :root[data-theme="dark"]{
-    --bg:#0e1512; --surface:#141d19; --ink:#e7ece9; --muted:#9fb0a8;
-    --line:#243029; --teal:#3fd0b8; --teal-soft:#14261f; --gold:#d3ab63;
-    --callout:#13201b; --callout-line:#20362d; --focus:#3fd0b8;
-  }
-  *{box-sizing:border-box}
-  html{-webkit-text-size-adjust:100%}
-  body{margin:0;background:var(--bg);color:var(--ink);
-    font-family:"Mulish",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
-    font-size:17px;line-height:1.68;-webkit-font-smoothing:antialiased;}
-  .wrap{max-width:44rem;margin:0 auto;padding:clamp(1.25rem,4vw,3rem) clamp(1.1rem,5vw,2rem) 4rem}
-  header.masthead{display:flex;align-items:center;gap:.7rem;padding-bottom:1.1rem;
-    margin-bottom:2rem;border-bottom:1px solid var(--line);}
-  .badge{width:2.4rem;height:2.4rem;flex:0 0 auto;border-radius:12px;display:grid;
-    place-items:center;font-size:1.3rem;background:var(--teal-soft);
-    box-shadow:inset 0 0 0 1px var(--callout-line);}
-  .brand{display:flex;flex-direction:column;line-height:1.2}
-  .brand b{font-family:"Lora",Georgia,serif;font-weight:600;font-size:1.02rem;letter-spacing:.2px}
-  .brand span{font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:600}
-  h1{font-family:"Lora",Georgia,serif;font-weight:700;font-size:clamp(1.9rem,6vw,2.55rem);
-    line-height:1.12;margin:.2rem 0 .5rem;text-wrap:balance;}
-  .eff{color:var(--muted);font-size:.9rem;margin:0 0 1.6rem}
-  .eff b{color:var(--ink);font-weight:600}
-  .lead{font-size:1.05rem;color:var(--ink);margin:0 0 1.8rem}
-  .callout{background:var(--callout);border:1px solid var(--callout-line);border-radius:14px;
-    padding:1.05rem 1.2rem;margin:0 0 2.4rem;}
-  .callout p{margin:0 0 .35rem;font-weight:700;font-size:.82rem;letter-spacing:.1em;
-    text-transform:uppercase;color:var(--teal)}
-  .callout ul{margin:.2rem 0 0;padding:0;list-style:none;display:flex;flex-direction:column;gap:.35rem}
-  .callout li{position:relative;padding-left:1.5rem;font-weight:500}
-  .callout li::before{content:"✓";position:absolute;left:0;top:0;color:var(--teal);font-weight:800}
-  h2{font-family:"Lora",Georgia,serif;font-weight:600;font-size:1.28rem;margin:2.4rem 0 .6rem;
-    line-height:1.25;display:flex;align-items:baseline;gap:.6rem;text-wrap:balance;}
-  h2 .n{font-family:"Mulish",sans-serif;font-size:.78rem;font-weight:700;color:var(--gold);
-    flex:0 0 auto;font-variant-numeric:tabular-nums;letter-spacing:.05em;}
-  h3{font-size:1rem;font-weight:700;margin:1.3rem 0 .25rem;color:var(--ink)}
-  p{margin:.55rem 0}
-  a{color:var(--teal);text-decoration:underline;text-underline-offset:2px;text-decoration-thickness:1px}
-  a:focus-visible{outline:2px solid var(--focus);outline-offset:3px;border-radius:3px}
-  strong{font-weight:700}
-  ul.body{margin:.5rem 0 .6rem;padding-left:1.2rem}
-  ul.body li{margin:.3rem 0}
-  section{border-top:1px solid var(--line);padding-top:.4rem}
-  section:first-of-type{border-top:0}
-  .contact{margin-top:2.6rem;padding:1.3rem 1.4rem;border-radius:14px;background:var(--surface);
-    border:1px solid var(--line);}
-  .contact h2{margin-top:0}
-  .contact a{font-weight:600}
-  footer{margin-top:2.6rem;color:var(--muted);font-size:.82rem;text-align:center}
 </style>
 </head>
 <body>
-<div class="wrap">
-  <header class="masthead">
-    <div class="badge" aria-hidden="true">🕌</div>
-    <div class="brand">
-      <b>Umre Rehberi</b>
-      <span>iOS Uygulaması</span>
-    </div>
-  </header>
+<main>
+  <h1>Umre Rehberi – Gizlilik Politikası</h1>
+  <p class="muted">Son güncelleme: 7 Ekim 2026</p>
 
-  <h1>Gizlilik Politikası</h1>
-  <p class="eff">Son güncelleme: <b>31 Ağustos 2026</b></p>
+  <p>Bu politika, <strong>Umre Rehberi</strong> mobil uygulamasının (“Uygulama”) hangi kişisel verileri hangi amaçla işlediğini, nerede sakladığını ve haklarınızı açıklar. Veri sorumlusu: <strong>Enes Macit</strong> (“biz”). İletişim: <a href="mailto:enes.macit3429@gmail.com">enes.macit3429@gmail.com</a>.</p>
 
-  <p class="lead">Bu politika, <strong>Umre Rehberi</strong> mobil uygulamasının hangi bilgileri işlediğini, bunları
-  nasıl kullandığını ve gizliliğinizi nasıl koruduğunu açıklar. Uygulamayı kullanarak bu politikayı kabul etmiş olursunuz.</p>
+  <h2>1. Hesap ve giriş</h2>
+  <p>Uygulamayı <strong>misafir olarak</strong> (kişisel bilgi vermeden) kullanabilir ya da e-posta veya Google hesabınızla kayıt olabilirsiniz. Misafir kullanımda yalnızca cihazınıza özel, sizi kimliğinizle eşleştirmeyen anonim bir kullanıcı kimliği oluşturulur.</p>
 
-  <div class="callout">
-    <p>Özetle</p>
-    <ul>
-      <li>Hesap oluşturmanız veya giriş yapmanız gerekmez.</li>
-      <li>Kişisel kimlik bilgilerinizi toplamıyor, saklamıyoruz.</li>
-      <li>Verilerinizi satmıyor, kiralamıyor, pazarlama için paylaşmıyoruz.</li>
-      <li>Reklam ağı veya kullanıcı takip (tracking) teknolojisi kullanmıyoruz.</li>
-    </ul>
-  </div>
+  <h2>2. Topladığımız veriler</h2>
+  <table>
+    <tr><th>Veri</th><th>Ne zaman</th><th>Amaç</th></tr>
+    <tr><td>Ad, e-posta adresi, (Google ile girişte) profil fotoğrafı bağlantısı</td><td>Kayıt / giriş</td><td>Hesabınızı oluşturmak ve yönetmek</td></tr>
+    <tr><td>Şifre</td><td>E-posta ile kayıt</td><td>Giriş; şifreniz Google Firebase tarafından şifrelenmiş saklanır, bizim tarafımızdan görülemez</td></tr>
+    <tr><td>Kullanıcı kimliği ve davet kodu</td><td>Otomatik</td><td>Hesabınıza ait verileri eşleştirmek</td></tr>
+    <tr><td>Video notlarınız, izleme geçmişiniz, kontrol listesi ilerlemeniz</td><td>Siz kullandıkça</td><td>Kaldığınız yerden devam etmeniz ve verilerinizin cihazlar arasında senkronlanması</td></tr>
+  </table>
+  <p><strong>Konum:</strong> Harita özelliği için konumunuz yalnızca cihazınızda, anlık olarak kullanılır; sunucularımıza gönderilmez ve saklanmaz.</p>
+  <p>Reklam, analiz veya izleme (tracking) amacıyla veri toplamıyoruz; verilerinizi satmıyor ve reklam amacıyla paylaşmıyoruz.</p>
 
-  <section>
-    <h2><span class="n">01</span>İşlediğimiz bilgiler</h2>
-    <h3>Konum bilgisi</h3>
-    <p>Harita bölümünde bulunduğunuz konumu gösterebilmek ve size yakın kutsal mekânları işaretleyebilmek için,
-    yalnızca siz izin verdiğinizde cihazınızın konum bilgisine erişiriz. Konumunuz <strong>yalnızca cihazınızda,
-    anlık olarak</strong> kullanılır; sunucularımıza gönderilmez, kaydedilmez veya üçüncü taraflarla paylaşılmaz.
-    Konum iznini istediğiniz zaman cihaz ayarlarından kapatabilirsiniz.</p>
-    <h3>Cihazınızda saklanan içerik</h3>
-    <p>Kişisel notlarınız, kontrol listesi (Umre adımları, bavul vb.) ilerlemeniz ve indirdiğiniz içerikler
-    <strong>yalnızca kendi cihazınızda</strong> yerel olarak saklanır. Bu veriler tarafımıza iletilmez ve bizim
-    tarafımızdan görülemez. Uygulamayı sildiğinizde bu veriler de cihazınızdan kaldırılır.</p>
-    <h3>Gömülü video içerikleri</h3>
-    <p>Uygulamadaki rehber videolar YouTube üzerinden oynatılır. Bir videoyu izlediğinizde, YouTube (Google)
-    kendi hizmetleri kapsamında veri toplayabilir. Bu içerikler Google'ın gizlilik politikasına tâbidir.</p>
-  </section>
+  <h2>3. Verilerin saklandığı yer</h2>
+  <p>Hesap ve uygulama verileriniz, Google’ın <strong>Firebase</strong> hizmetlerinde (Firebase Authentication ve Cloud Firestore) saklanır. Bu hizmetler Google sunucularında çalışır ve verileriniz Türkiye dışındaki veri merkezlerinde işlenebilir. Ayrıntılar: <a href="https://firebase.google.com/support/privacy">firebase.google.com/support/privacy</a>.</p>
 
-  <section>
-    <h2><span class="n">02</span>Toplamadığımız bilgiler</h2>
-    <p>Adınız, e-posta adresiniz, telefon numaranız gibi kişisel kimlik bilgilerini istemiyor ve toplamıyoruz.
-    Uygulamada reklam, çerez tabanlı takip veya üçüncü taraf analiz (analytics) araçları bulunmamaktadır.
-    Davranışlarınızı profillemiyor, verilerinizi ticari amaçla işlemiyoruz.</p>
-  </section>
+  <h2>4. Verilere kimler erişebilir</h2>
+  <p>Kendi verilerinizi yalnızca siz görür ve yönetirsiniz. Verileriniz üçüncü kişilerle paylaşılmaz; yalnızca aşağıdaki hizmet sağlayıcılar aracılığıyla işlenir.</p>
 
-  <section>
-    <h2><span class="n">03</span>Üçüncü taraf hizmetler</h2>
-    <p>Uygulama, işlevlerini yerine getirmek için aşağıdaki üçüncü taraf hizmetlerden yararlanır. Bu hizmetlerin
-    veri uygulamaları kendi gizlilik politikalarına tâbidir:</p>
-    <ul class="body">
-      <li><strong>YouTube / Google</strong> — rehber videolarının oynatılması için.</li>
-      <li><strong>OpenStreetMap</strong> — harita görüntülerinin sağlanması için.</li>
-    </ul>
-  </section>
+  <h2>5. Üçüncü taraf hizmetler</h2>
+  <ul>
+    <li><strong>Google Firebase</strong> – hesap ve veri depolama.</li>
+    <li><strong>Google ile Giriş</strong> – Google hesabınızla giriş yaptığınızda.</li>
+    <li><strong>YouTube</strong> – videolar YouTube oynatıcısıyla gösterilir; YouTube’un kendi gizlilik politikası geçerlidir.</li>
+    <li><strong>OpenStreetMap</strong> – harita görüntüleri.</li>
+  </ul>
 
-  <section>
-    <h2><span class="n">04</span>Veri güvenliği ve saklama</h2>
-    <p>Uygulama kişisel verilerinizi sunucularımızda saklamadığı için, oluşturduğunuz tüm içerik cihazınızda
-    kalır ve cihazınızın kendi güvenlik önlemleriyle (ekran kilidi, şifreleme vb.) korunur. Sunucu tarafında
-    tuttuğumuz kişisel bir kaydınız bulunmamaktadır.</p>
-  </section>
+  <h2>6. Saklama süresi ve hesap silme</h2>
+  <p>Verileriniz hesabınız açık olduğu sürece saklanır. Hesabınızı uygulama içinden <strong>Profil → Hesabımı Sil</strong> ile istediğiniz an silebilirsiniz. Silme işlemi hesabınızı, profilinizi, notlarınızı, izleme geçmişinizi ve kontrol listelerinizi kalıcı olarak kaldırır.</p>
 
-  <section>
-    <h2><span class="n">05</span>Çocukların gizliliği</h2>
-    <p>Uygulama herhangi bir kişisel veri toplamadığından her yaştan kullanıcı için uygundur ve çocuklardan
-    bilerek kişisel bilgi toplamaz.</p>
-  </section>
+  <h2>7. Haklarınız (KVKK)</h2>
+  <p>6698 sayılı Kişisel Verilerin Korunması Kanunu’nun 11. maddesi kapsamında; verilerinizin işlenip işlenmediğini öğrenme, bilgi talep etme, düzeltilmesini veya silinmesini isteme ve itiraz etme haklarına sahipsiniz. Talepleriniz için <a href="mailto:enes.macit3429@gmail.com">enes.macit3429@gmail.com</a> adresine yazabilirsiniz.</p>
 
-  <section>
-    <h2><span class="n">06</span>Bu politikadaki değişiklikler</h2>
-    <p>Bu gizlilik politikasını zaman zaman güncelleyebiliriz. Önemli değişiklikler bu sayfada yayımlanır ve
-    yukarıdaki "Son güncelleme" tarihi yenilenir. Uygulamayı kullanmaya devam etmeniz, güncellenmiş politikayı
-    kabul ettiğiniz anlamına gelir.</p>
-  </section>
+  <h2>8. Çocukların gizliliği</h2>
+  <p>Uygulama 13 yaşından küçük çocuklara yönelik değildir ve bu yaştaki çocuklardan bilerek kişisel veri toplamayız.</p>
 
-  <div class="contact">
-    <h2><span class="n">07</span>İletişim</h2>
-    <p>Gizlilik politikamızla ilgili soru, talep veya endişeleriniz için bize ulaşabilirsiniz:</p>
-    <p><a href="mailto:mollaogluefendi@gmail.com">mollaogluefendi@gmail.com</a></p>
-  </div>
-
-  <footer>© 2026 Enes Macit · Umre Rehberi</footer>
-</div>
+  <h2>9. Değişiklikler</h2>
+  <p>Bu politika güncellenebilir; değişiklikler bu sayfada yayımlanır ve yukarıdaki tarih güncellenir.</p>
+</main>
 </body>
 </html>
